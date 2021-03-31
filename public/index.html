@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0,
+        maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="CSS/base.css">
+        <title>Inicio</title>
+    </head>
+    <body>
+        <div class="sidebar" id="sidebar">
+            <div class="header">
+                <a href="#"><img src="imagenes/cerrar.png" alt="Abrir" width="60px" height="60px" 
+                    onclick="ocultarSideBar();"></a>
+            </div>
+            <div class="body" id="sidebarBody">
+                <!--ul>
+                    <li>
+                        <div class="linea"><a href="#" 
+                            onclick="toggleOpciones(1);">Proyecto 1</a></div>
+                        <ul id="opciones1">
+                            <li><a href="#">Anuncios</a></li>
+                            <li><a href="#">Reuniones</a></li>
+                            <li><a href="#">Objetivos</a></li>
+                            <li><a href="#">Administrar</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="linea"><a href="#"
+                            onclick="toggleOpciones(2);">Proyecto 2</a></div>
+                        <ul id="opciones2">
+                            <li><a href="#">Anuncios</a></li>
+                            <li><a href="#">Reuniones</a></li>
+                            <li><a href="#">Objetivos</a></li>
+                            <li><a href="#">Administrar</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Cerrar Sesion</a></li>
+                </ul-->
+            </div>
+        </div>
+
+        <div class="header">
+            <a href="#"><img src="imagenes/lista_w.png" alt="Abrir" width="60px" height="60px"
+                onclick="abrirSideBar();"></a>
+        </div>
+
+        <div class="Contenedor">
+            <div class="mensaje">
+                <p>Accede al menú para elegir un proyecto en el cual colaborar</p>
+            </div>
+        </div>
+
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-messaging.js"></script>
+
+        <script src="JS/basedefuego.js"></script>
+
+        <!--script src="firebase-messaging-sw.js"></script-->
+
+        <script src="JS/sidebar.js"></script>
+
+        <script>
+            var uid;
+
+            firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                uid = user.uid;
+            }else {
+                location="sesion.html";
+            }
+            });
+
+            inicializarSidebar();
+        </script>
+    </body>
+</html>

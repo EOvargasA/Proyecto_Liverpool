@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0,
+        maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="CSS/admin_tarea.css">
+        <title>Inicio</title>
+    </head>
+    <body>
+        <div class="sidebar" id="sidebar">
+            <div class="header">
+                <a href="#"><img src="imagenes/cerrar.png" alt="Abrir" width="60px" height="60px" 
+                    onclick="ocultarSideBar();"></a>
+            </div>
+            <div class="body" id="sidebarBody">
+            </div>
+        </div>
+
+        <div class="header">
+            <div class="button">
+                <a href="#"><img src="imagenes/lista_w.png" alt="Abrir" width="60px" height="60px"
+                    onclick="abrirSideBar();"></a>
+            </div>
+            <div class="menu">
+                <p id="titulocompleto">Titulo</p>
+                <div id="listaPC">
+                </div>
+            </div>
+        </div>
+
+        <div class="espacio"></div>
+        <div class="Contenedor">
+            <div class="mensaje">
+                <div class="nombre"><p id="empleadoActual"></p></div>
+                <ul id="tareas">
+                    <!--li>
+                        Lorem Iptsum<br>
+                        <a href="#">Eliminar</a>
+                    </li>
+                    <li>
+                        Lorem Iptsum<br>
+                        <a href="#">Eliminar</a>
+                    </li><li>
+                        Lorem Iptsum<br>
+                        <a href="#">Eliminar</a>
+                    </li-->
+                </ul>
+                <form onsubmit="return nuevaActividad();">
+                    <input id="tarea" type="name" placeholder="Tarea" class="texto">
+                    <input type="submit" value="Añadir" class="boton">
+                </form>
+            </div>
+        </div>
+
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-messaging.js"></script>
+        
+        <script src="JS/basedefuego.js"></script>
+
+        <script src="JS/sidebar.js"></script>
+
+        <script src="JS/admin_tarea.js"></script>
+    </body>
+</html>

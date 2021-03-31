@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0,
+        maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="CSS/reuniones.css">
+        <title>Anuncios</title>
+    </head>
+    <body>
+        <div class="sidebar" id="sidebar">
+            <div class="header">
+                <a href="#"><img src="imagenes/cerrar.png" alt="Abrir" width="60px" height="60px" 
+                    onclick="ocultarSideBar();"></a>
+            </div>
+            <div class="body" id="sidebarBody">
+            </div>
+        </div>
+
+        <div class="header">
+            <div class="button">
+                <a href="#"><img src="imagenes/lista_w.png" alt="Abrir" width="60px" height="60px"
+                    onclick="abrirSideBar();"></a>
+            </div>
+            <div class="menu">
+                <p id="titulocompleto">Titulo</p>
+                <div id="listaPC">
+                </div>
+            </div>
+        </div>
+
+        <div class="espacio"></div>
+        <div class="cuerpo">
+            <div class="flex">
+                <button class="boton" onclick="toggleFormulario();">Crear Post</button>
+            </div>
+            <div class="formulario" id="formularioPosts">
+                <form onsubmit="return postearReunion()">
+                    <input type="text" id="titulo" placeholder="Titulo" class="texto"><br>
+                    <div class="mapaContenedor" id="map"></div>
+                    <input type="text" id="link" placeholder="Link digital" class="texto"><br>
+                    <input type="date" id="fecha" class="texto"><br>
+                    <input type="submit" class="respuesta">
+                </form>
+            </div>
+            <div id="contenedorReuniones">
+                <!--div class="noticia">
+                    <div class="original">
+                        <p class="nombre">Martha</p>
+                        <p class="titulo">Lorem ipsum</p>
+                        <div class="mapaContenedor" id="map"></div>
+                        <p class="contenido">Link: http://www.terra.es</p>
+                        <p class="fecha">31/03/2021</p>
+                    </div>
+                </div-->
+            </div>
+        </div>
+
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-messaging.js"></script>
+
+        <script async 
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7WdS089Pe1QBevv19FaQZL08zWnxRbe8&callback=initMap">
+        </script>
+
+        <script src="JS/basedefuego.js"></script>
+
+        <script src="JS/sidebar.js"></script>
+        
+        <script src="JS/reuniones.js"></script>
+
+    </body>
+</html>
